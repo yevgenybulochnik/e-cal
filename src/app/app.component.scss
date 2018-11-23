@@ -1,0 +1,27 @@
+:host {
+  height: 100%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 7em auto;
+  grid-template-rows: 2.5em auto;
+  grid-template-areas:
+    'top-menu top-menu top-menu top-menu'
+    'left-menu content content content';
+}
+
+.top-menu {
+  grid-area: top-menu;
+  position: relative;
+}
+
+.left-menu {
+  grid-area: left-menu;
+  position: relative;
+}
+
+.content {
+  grid-area: content;
+  position: relative;
+  z-index: 2;
+  box-shadow: 1px 1px 4px 0px;
+}
