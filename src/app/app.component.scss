@@ -5,11 +5,11 @@
   grid-template-columns: 7em auto;
   grid-template-rows: 3em auto;
   grid-template-areas:
-    'top-menu top-menu top-menu top-menu'
+    'left-menu top-menu top-menu top-menu'
     'left-menu content content content';
 }
 
-.top-menu {
+cal-top-menu {
   grid-area: top-menu;
   position: relative;
 }
