@@ -1,0 +1,29 @@
+:host {
+  text-align: center;
+  height: 100vh;
+}
+
+button {
+  margin: 2px 0;
+}
+
+.spacer {
+  height: 3em;
+}
+
+.clinics {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.providers {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  border-bottom: solid lightgrey 2px;
+  margin: 5px 0;
+}
