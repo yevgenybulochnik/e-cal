@@ -14,12 +14,12 @@ cal-top-menu {
   position: relative;
 }
 
-.left-menu {
+cal-left-menu {
   grid-area: left-menu;
   position: relative;
 }
 
-.content {
+cal-content {
   grid-area: content;
   position: relative;
   z-index: 2;
