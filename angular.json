@@ -7,7 +7,7 @@
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
-      "prefix": "app",
+      "prefix": "cal",
       "schematics": {
         "@schematics/angular:component": {
           "styleext": "scss",
