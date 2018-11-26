@@ -14,17 +14,17 @@ button {
   align-items: center;
 }
 
+.year-label {
+  border-right: solid lightgrey 2px;
+  padding: 5px 6px;
+  margin-right: 5px;
+}
+
 .options {
   display: flex;
   flex-grow: 1;
   align-items: center;
   justify-content: flex-end;
-}
-
-.year-label {
-  border-right: solid lightgrey 2px;
-  padding: 5px 6px;
-  margin-right: 5px;
 }
 
 .upload-file {
