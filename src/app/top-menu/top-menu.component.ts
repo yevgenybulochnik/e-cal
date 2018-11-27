@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material';
+import { FileLoadDialogComponent } from '../fileload-dialog/fileload-dialog.component';
 
 @Component({
   selector: 'cal-top-menu',
@@ -9,16 +11,20 @@ import { Component, OnInit } from '@angular/core';
       <button mat-stroked-button>2015</button>
     </div>
     <div class='options'>
-      <button class='upload-file' mat-stroked-button>Upload File</button>
+      <button (click)='openFileLoadDialog()' class='upload-file' mat-stroked-button>Upload File</button>
     </div>
   `,
   styleUrls: ['./top-menu.component.scss']
 })
 export class TopMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dialog: MatDialog) { }
 
   ngOnInit() {
+  }
+
+  openFileLoadDialog(): void {
+    const dialogRef = this.dialog.open(FileLoadDialogComponent, {});
   }
 
 }
