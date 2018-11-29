@@ -1,0 +1,19 @@
+<div class="file-dialog-container">
+  <div class="file-selection">
+    <button mat-stroked-button (click)="fileInput.click()">
+      <div>Select File</div>
+      <input #fileInput type="file" (change)="onFileInput($event.target.files)" style="display:none;" />
+    </button>
+    <span>{{filePlaceHolder}}</span>
+  </div>
+  <div class="file-content">
+    <div>Columns:</div>
+    <span *ngFor='let col of fileColumns'>{{col}}</span>
+    <div>Sample Data:</div>
+    <div class='sample-data' *ngFor='let row of fileDataRows'>{{generateDataString(row)}}</div>
+  </div>
+  <div class="dialog-footer">
+    <button mat-stroked-button>Use File</button>
+    <button mat-stroked-button (click)='closeDialog()'>Cancel</button>
+  </div>
+</div>

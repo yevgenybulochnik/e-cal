@@ -1,0 +1,29 @@
+.file-dialog-container {
+  display: flex;
+  flex-direction: column;
+  & > div {
+    margin: 0.5em;
+  }
+}
+
+.file-selection {
+  span {
+    position: relative;
+    left: 20px;
+  }
+}
+
+.file-content {
+  flex-grow: 1;
+  span, .sample-data {
+    margin: 3px;
+  }
+}
+
+.dialog-footer {
+  align-self: center;
+  button {
+    width: 8em;
+    margin: 0 0.5em;
+  }
+}
