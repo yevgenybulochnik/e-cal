@@ -1,4 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { csvParse } from 'd3';
 
@@ -13,29 +14,24 @@ export class FileLoadDialogComponent implements OnInit {
   fileDataRows: any[];
   constructor(
     public dialogRef: MatDialogRef<FileLoadDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: any
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private dataservice: DataService
   ) {
     dialogRef.disableClose = true;
+    this.dataservice.data.subscribe(d => {
+      this.fileColumns = d.columns;
+      this.fileDataRows = d.slice(0, 4);
+    });
   }
 
   ngOnInit() {
   }
 
-  // Function needs to be refactored, split out reader.onload callback
   onFileInput(files: FileList): void {
     const file = files[0];
     if (file) {
       this.filePlaceHolder = file.name;
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        const fileByteString = reader.result;
-        const parsedData = csvParse(fileByteString, (rowData, index) => {
-          if ( index < 5  ) { return rowData; }
-        });
-        this.fileColumns = parsedData.columns;
-        this.fileDataRows = parsedData.slice(0, 4);
-      };
-      reader.readAsBinaryString(file);
+      this.dataservice.readFile(file, true);
     } else {
         this.fileColumns = [];
         this.fileDataRows = [];
